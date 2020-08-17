@@ -5,10 +5,10 @@ import Footer from "../components/Footer"
 
 const Test = () => (
   <main>
-    <Header title="TestPage"></Header>
+    <Header title="TestPage" />
     <h1>Hello Test</h1>
     <button onClick={() => navigate("/")}>Back to home</button>
-    <Footer></Footer>
+    <Footer />
   </main>
 )
 
