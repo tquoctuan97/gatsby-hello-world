@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import Header from "../components/header"
+import Header from "../components/Header"
 
 const Test = () => (
   <main>
