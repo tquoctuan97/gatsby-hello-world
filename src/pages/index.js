@@ -2,16 +2,16 @@ import React from "react"
 import { Link } from "gatsby"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Post from "../components/Post"
 
 const Home = () => (
-  <main>
+  <div>
     <Header title="HomePage"></Header>
-    <div>
-      <h1>Hello This is home page</h1>
+    <div className="container">
+      <Post></Post>
     </div>
-    <Link to="/test">Go to Test Page</Link>
     <Footer></Footer>
-  </main>
+  </div>
 )
 
 export default Home
