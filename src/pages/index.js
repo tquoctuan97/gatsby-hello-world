@@ -5,13 +5,15 @@ import Footer from "../components/Footer"
 import Post from "../components/Post"
 
 const Home = () => (
-  <div>
+  <main>
     <Header title="HomePage" />
     <div className="container">
-      <Post />
+      <div className="row col-xs-6 justify-content-center">
+        <Post />
+      </div>
     </div>
     <Footer />
-  </div>
+  </main>
 )
 
 export default Home
