@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Post from "../components/Post"
@@ -9,7 +8,10 @@ const Home = () => (
     <Header title="HomePage" />
     <div className="container">
       <div className="row col-xs-6 justify-content-center">
-        <Post />
+        <Post title="Hello World" excerpt="This is a exceprt" />
+        <Post title="Hello World" excerpt="This is a exceprt" />
+        <Post title="Hello World" excerpt="This is a exceprt" />
+        <Post title="Hello World" excerpt="This is a exceprt" />
       </div>
     </div>
     <Footer />
