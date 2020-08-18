@@ -12,6 +12,7 @@ const Home = ({ data }) => {
           excerpt={node.excerpt}
           image={node.frontmatter.image}
           key={node.id}
+          readMore={node.fields.slug}
         />
       ))}
     </MainLayout>
@@ -29,6 +30,9 @@ export const query = graphql`
           date
           keywords
           image
+        }
+        fields {
+          slug
         }
         html
         excerpt
