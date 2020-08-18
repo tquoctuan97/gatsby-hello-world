@@ -7,8 +7,8 @@ const Post = props => (
     <Card>
       <Card.Img variant="top" src={props.image} />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.excerpt}</Card.Text>
+        <Card.Title dangerouslySetInnerHTML={{ __html: props.title }} />
+        <Card.Text dangerouslySetInnerHTML={{ __html: props.excerpt }} />
         <Button variant="primary" as={Link} to={props.readMore}>
           Read More
         </Button>

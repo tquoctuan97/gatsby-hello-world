@@ -29,6 +29,14 @@ module.exports = {
         plugins: [],
       },
     },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "purpledesign.studio",
+        protocol: "https",
+        hostingWPCOM: false,
+      },
+    },
   ],
   siteMetadata: {
     title: "Gatsby Boostrap",
