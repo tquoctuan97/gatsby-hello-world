@@ -4,13 +4,16 @@ import Post from "../components/Post"
 import { graphql } from "gatsby"
 
 const Home = ({ data }) => {
-  console.log(data)
   return (
     <MainLayout className="justify-content-center">
-      <Post title="Hello World" excerpt="This is a exceprt" />
-      <Post title="Hello World" excerpt="This is a exceprt" />
-      <Post title="Hello World" excerpt="This is a exceprt" />
-      <Post title="Hello World" excerpt="This is a exceprt" />
+      {data.allMarkdownRemark.nodes.map(node => (
+        <Post
+          title={node.frontmatter.title}
+          excerpt={node.excerpt}
+          image={node.frontmatter.image}
+          key={node.id}
+        />
+      ))}
     </MainLayout>
   )
 }
