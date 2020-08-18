@@ -2,7 +2,7 @@ import React from "react"
 import { Card, Button } from "react-bootstrap"
 
 const Post = props => (
-  <div className="pt-4">
+  <div className="pb-4">
     <Card>
       <Card.Img variant="top" src="gatsby.jpg" />
       <Card.Body>
