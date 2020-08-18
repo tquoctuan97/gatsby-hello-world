@@ -2,7 +2,7 @@ import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import { Link } from "gatsby"
 
-export default props => (
+const Header = props => (
   <Navbar bg="light" expand="md">
     <Navbar.Brand>
       <Link to="/">Gatsby-Bootstrap</Link>
@@ -23,3 +23,5 @@ export default props => (
     </Navbar.Collapse>
   </Navbar>
 )
+
+export default Header
