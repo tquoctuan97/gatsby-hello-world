@@ -1,4 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -12,22 +13,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-// exports.createPage = ({ graphql, actions }) => {
-//   return graphql(`
-//     {
-//       allMarkdownRemark {
-//         nodes {
-//           fields {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `).then(result => console.log(JSON.stringify(result)))
-// }
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+
   return graphql(`
     {
       allMarkdownRemark {
@@ -38,5 +26,16 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => console.log(JSON.stringify(result)))
+  `).then(result => {
+    result.data.allMarkdownRemark.nodes.forEach(node => {
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve("./src/layouts/PostLayout.js"),
+        context: {
+          slug: node.fields.slug,
+        },
+      })
+    })
+  })
 }
+
