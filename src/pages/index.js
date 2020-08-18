@@ -12,7 +12,7 @@ const Home = ({ data }) => {
           excerpt={node.excerpt}
           image={node.featured_media.source_url}
           key={node.id}
-          readMore={node.featured_media.source_url}
+          readMore={node.slug}
         />
       ))}
     </MainLayout>
@@ -20,7 +20,6 @@ const Home = ({ data }) => {
 }
 
 export default Home
-
 
 export const query = graphql`
   {

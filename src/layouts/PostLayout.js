@@ -4,14 +4,14 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 const PostLayout = ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.wordpressPost
   return (
     <div>
       <Header />
       <div className="container">
-        <div className="row justify-content-md-center">
-          <h1>{post.frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="row justify-content-md-center pt-5">
+          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
       </div>
       <Footer />
@@ -23,16 +23,9 @@ export default PostLayout
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark( 
-      fields: { 
-        slug: 
-          { eq: $slug } 
-        }) 
-      {
-      html
-      frontmatter {
-        title
-      }
+    wordpressPost(slug: { eq: $slug }) {
+      title
+      content
     }
   }
 `
